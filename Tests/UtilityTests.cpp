@@ -76,9 +76,9 @@ void TestArrayTransformer(UnitTest& unitTest) {
 	ADD_TRANSFORMATION_TEST(unitTest, Transformation::intersect, "0", arrays, IntegerArrayResult);
 
 	miscUtils::QuickSort(arrays.begin(), arrays.end(), 
-						std::function<bool(const std::vector<int>& a,const std::vector<int>& b)>{[](const auto& a, const auto& b) {
-							 return a.size() > b.size();
-						}});
+				std::function<bool(const std::vector<int>& a,const std::vector<int>& b)>{[](const auto& a, const auto& b) {
+					 return a.size() > b.size();
+				}});
 
 	//● тест знаходити перетин двох масивів з найбільжиною довгою
 	auto twoLongestArray = std::vector<std::vector<int>>{ arrays[0], arrays[1] };
