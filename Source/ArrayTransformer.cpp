@@ -5,9 +5,9 @@
 
 #define PRINT_IF_NEED_AND_COPY(source, destination, print, additionalInfo) \
     if (print) { \
-		std::cout << additionalInfo << std::endl; \
+	std::cout << additionalInfo << std::endl; \
         miscUtils::PrintArrays(source); \
-		std::cout << std::endl; \
+	std::cout << std::endl; \
     } \
     std::copy(source.begin(), source.end(), std::back_inserter(destination.m_vData))
 
@@ -44,8 +44,8 @@ std::shared_ptr<Result> UniqueReverseSortedTransformer::GetResult() const {
 }
 
 std::unique_ptr<ArrayTransformer> TransformerFactory::Create(enum Transformation type) {
-    if		(type == Transformation::sort)					return std::unique_ptr<ArrayTransformer>(new ManualSortTransformer());
-    else if (type == Transformation::intersect)				return std::unique_ptr<ArrayTransformer>(new IntersectionTransformer());
-    else if (type == Transformation::uniqueReverseSorted)	return std::unique_ptr<ArrayTransformer>(new UniqueReverseSortedTransformer());
-	else													throw std::invalid_argument("Невідомий тип трансформації: " + int(type));
+	if	(type == Transformation::sort)			return std::unique_ptr<ArrayTransformer>(new ManualSortTransformer());
+	else if (type == Transformation::intersect)		return std::unique_ptr<ArrayTransformer>(new IntersectionTransformer());
+	else if (type == Transformation::uniqueReverseSorted)	return std::unique_ptr<ArrayTransformer>(new UniqueReverseSortedTransformer());
+	else							throw std::invalid_argument("РќРµРІС–РґРѕРјРёР№ С‚РёРї С‚СЂР°РЅСЃС„РѕСЂРјР°С†С–С—:  " + int(type));
 }
