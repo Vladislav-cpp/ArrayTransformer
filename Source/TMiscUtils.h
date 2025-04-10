@@ -41,10 +41,10 @@ std::string CustomFormat(const std::map<int, T>& map) {
 
 template <typename T>
 void PrintArrays(const T& arrays) {
-    for (size_t i = 0; i < arrays.size(); ++i) {
+    for(size_t i = 0; i < arrays.size(); ++i) {
 
         std::cout << "Vector " << i + 1 << ": ";
-        for (int num : arrays[i]) std::cout << num << " ";
+        for(int num : arrays[i]) std::cout << num << " ";
         std::cout << std::endl;
     }
 }
@@ -52,7 +52,7 @@ void PrintArrays(const T& arrays) {
 template <>
 void inline PrintArrays<std::vector<int>>(const std::vector<int>& arrays) {
 
-    for (int num : arrays) std::cout << num << " ";
+    for(int num : arrays) std::cout << num << " ";
     std::cout << std::endl;
 }
 
@@ -60,8 +60,8 @@ template <typename T>
 std::map<T, int> CountElements(const std::vector<std::vector<T>>& arrays) {
     std::map<T, int> counter;
 
-    for (const auto& array : arrays)
-        for (const T& item : array)
+    for(const auto& array : arrays)
+        for(const T& item : array)
             ++counter[item];
     return counter;
 }
